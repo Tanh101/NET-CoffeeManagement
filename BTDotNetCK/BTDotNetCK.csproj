@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{312661D0-65E6-4828-9AF5-885C4427B8CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BTDotNetCK</RootNamespace>
+    <AssemblyName>BTDotNetCK</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Coffee-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BLL_ForgotPassword.cs" />
+    <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="BLL\BLL_QLBH.cs" />
+    <Compile Include="BLL\BLL_QLKH.cs" />
+    <Compile Include="BLL\BLL_QLNV.cs" />
+    <Compile Include="BLL\BLL_QLTK.cs" />
+    <Compile Include="DAL\DAL_ForgotPassword.cs" />
+    <Compile Include="DAL\DAL_Login.cs" />
+    <Compile Include="DAL\DAL_QLBH.cs" />
+    <Compile Include="DAL\DAL_QLDT.cs" />
+    <Compile Include="DAL\DAL_QLKH.cs" />
+    <Compile Include="DAL\DAL_QLNV.cs" />
+    <Compile Include="DAL\DAL_QLTK.cs" />
+    <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\Dashboard.cs" />
+    <Compile Include="DTO\Order.cs" />
+    <Compile Include="DTO\OrderDetail.cs" />
+    <Compile Include="DTO\Product.cs" />
+    <Compile Include="DTO\Staff.cs" />
+    <Compile Include="DTO\Table.cs" />
+    <Compile Include="GUI\FormAddHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddHang.Designer.cs">
+      <DependentUpon>FormAddHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAddKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddKH.Designer.cs">
+      <DependentUpon>FormAddKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAddNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAddNV.Designer.cs">
+      <DependentUpon>FormAddNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormEditHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormEditHang.Designer.cs">
+      <DependentUpon>FormEditHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormForgotPassword.Designer.cs">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormHoaDonDatMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormHoaDonDatMon.Designer.cs">
+      <DependentUpon>FormHoaDonDatMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormIdentify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormIdentify.Designer.cs">
+      <DependentUpon>FormIdentify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMainMenuNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMainMenuNV.Designer.cs">
+      <DependentUpon>FormMainMenuNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMainMenuQTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMainMenuQTV.Designer.cs">
+      <DependentUpon>FormMainMenuQTV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMon.Designer.cs">
+      <DependentUpon>FormMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLBH.Designer.cs">
+      <DependentUpon>FormQLBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLBHNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLBHNV.Designer.cs">
+      <DependentUpon>FormQLBHNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLDT.Designer.cs">
+      <DependentUpon>FormQLDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLKH.Designer.cs">
+      <DependentUpon>FormQLKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLNV.Designer.cs">
+      <DependentUpon>FormQLNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormQLMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormQLMH.Designer.cs">
+      <DependentUpon>FormQLMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormSettingAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormSettingAccount.Designer.cs">
+      <DependentUpon>FormSettingAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormEditNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormEditNV.Designer.cs">
+      <DependentUpon>FormEditNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormTTKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormTTKH.Designer.cs">
+      <DependentUpon>FormTTKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormTTMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormTTMH.Designer.cs">
+      <DependentUpon>FormTTMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormTTNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormTTNV.Designer.cs">
+      <DependentUpon>FormTTNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MyApplicationContext.cs" />
+    <Compile Include="GUI\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuColorTable.cs" />
+    <Compile Include="GUI\MenuRenderer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GUI\RJDropDownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\Validator.cs" />
+    <EmbeddedResource Include="GUI\FormAddHang.resx">
+      <DependentUpon>FormAddHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAddNV.resx">
+      <DependentUpon>FormAddNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormEditHang.resx">
+      <DependentUpon>FormEditHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormForgotPassword.resx">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormHoaDonDatMon.resx">
+      <DependentUpon>FormHoaDonDatMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormIdentify.resx">
+      <DependentUpon>FormIdentify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMainMenuNV.resx">
+      <DependentUpon>FormMainMenuNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMainMenuQTV.resx">
+      <DependentUpon>FormMainMenuQTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLBH.resx">
+      <DependentUpon>FormQLBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLBHNV.resx">
+      <DependentUpon>FormQLBHNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLDT.resx">
+      <DependentUpon>FormQLDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLKH.resx">
+      <DependentUpon>FormQLKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLNV.resx">
+      <DependentUpon>FormQLNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormQLMH.resx">
+      <DependentUpon>FormQLMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormSettingAccount.resx">
+      <DependentUpon>FormSettingAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormEditNV.resx">
+      <DependentUpon>FormEditNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormTTKH.resx">
+      <DependentUpon>FormTTKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormTTMH.resx">
+      <DependentUpon>FormTTMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormTTNV.resx">
+      <DependentUpon>FormTTNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Coffee-icon.ico" />
+    <Content Include="Img\Order\order.txt" />
+    <None Include="Img\Product\tra sua dau nhieu thach.jpg" />
+    <None Include="Img\Product\tra sua dau do.jpg" />
+    <None Include="Img\Product\thom ep.jpg" />
+    <None Include="Img\Product\ca phe sua sai gon.jpg" />
+    <None Include="Img\Product\ca phe den sai gon.jpg" />
+    <None Include="Img\Product\xoai xay socola.jpg" />
+    <None Include="Img\Product\tra sua truyen thong.jpg" />
+    <None Include="Img\Product\tra sua tran chau duong trang.jpg" />
+    <None Include="Img\Product\tra sua tran chau duong den.jpg" />
+    <None Include="Img\Product\tra sua socola.jpg" />
+    <None Include="Img\Product\tra sua milkfoam.jpg" />
+    <None Include="Img\Product\tra sua kem flan.jpg" />
+    <None Include="Img\Product\tra sua bac ha.jpg" />
+    <None Include="Img\Product\tra hoa dau biec tran chau.png" />
+    <None Include="Img\Product\tra hoa dau biec thach.jpg" />
+    <None Include="Img\Product\tra hoa dau biec milk foam.jpg" />
+    <None Include="Img\Product\tra hoa dau biec hat chia.jpg" />
+    <None Include="Img\Product\tra dao.jpg" />
+    <None Include="Img\Product\tra dao cam ha.jpg" />
+    <None Include="Img\Product\sua tuoi tran chau duong den.jpg" />
+    <None Include="Img\Product\sua tuoi tran chau duong den kem trung nuong.jpg" />
+    <None Include="Img\Product\sua tuoi nong.jpg" />
+    <None Include="Img\Product\sua tuoi da.jpg" />
+    <None Include="Img\Product\sua chua viet quat.png" />
+    <None Include="Img\Product\sua chua nha dam.jpg" />
+    <None Include="Img\Product\sua chua dau.jpg" />
+    <None Include="Img\Product\sua chua da.jpg" />
+    <None Include="Img\Product\sua chua ca phe.jpg" />
+    <None Include="Img\Product\socola da xay.jpg" />
+    <None Include="Img\Product\socola bot bien.jpg" />
+    <None Include="Img\Product\sinh to xoai.jpg" />
+    <None Include="Img\Product\sinh to dau.jpg" />
+    <None Include="Img\Product\milo dam tran chau duong den.jpg" />
+    <None Include="Img\Product\matcha da xay.jpg" />
+    <None Include="Img\Product\matcha bot bien.jpg" />
+    <None Include="Img\Product\latte matcha.jpg" />
+    <None Include="Img\Product\kem oc que.jpg" />
+    <None Include="Img\Product\kem ly socola.jpg" />
+    <None Include="Img\Product\kem ly dau.jpg" />
+    <None Include="Img\Product\dalgona tran chau.jpg" />
+    <None Include="Img\Product\cookies socola.jpg" />
+    <None Include="Img\Product\cookies da xay.jpg" />
+    <None Include="Img\Product\coc ep.jpg" />
+    <None Include="Img\Product\chanh tuoi nong.jpg" />
+    <None Include="Img\Product\chanh tuoi da.jpg" />
+    <None Include="Img\Product\chanh day.jpg" />
+    <None Include="Img\Product\capuchino.jpg" />
+    <None Include="Img\Product\cam ep.jpg" />
+    <None Include="Img\Product\cacao nong.jpg" />
+    <None Include="Img\Product\cacao da.jpg" />
+    <None Include="Img\Product\ca rot ep.jpg" />
+    <None Include="Img\Product\ca phe sua phin.png" />
+    <None Include="Img\Product\ca phe sua may.jpg" />
+    <None Include="Img\Product\ca phe dua.jpg" />
+    <None Include="Img\Product\ca phe dua da xay.png" />
+    <None Include="Img\Product\Ca phe den phin.png" />
+    <None Include="Img\Product\ca phe den may.png" />
+    <None Include="Img\Product\ca phe bot bien.jpg" />
+    <None Include="Img\Product\bac xiu nong.jpg" />
+    <None Include="Img\Product\bac xiu da.jpg" />
+    <None Include="Img\Icon\women.png" />
+    <None Include="Img\Icon\web-browser.png" />
+    <None Include="Img\Icon\api.png" />
+    <None Include="Img\Icon\buyer.png" />
+    <None Include="Img\Icon\c-sharp.png" />
+    <None Include="Img\Icon\division.png" />
+    <None Include="Img\Icon\delete_30px.png" />
+    <None Include="Img\GI\aether.png" />
+    <None Include="Img\GI\albedo.png" />
+    <None Include="Img\GI\aloy.png" />
+    <None Include="Img\GI\amber.png" />
+    <None Include="Img\GI\ayato.png" />
+    <None Include="Img\GI\beidou.png" />
+    <None Include="Img\GI\ayaka.png" />
+    <None Include="Img\GI\barbara.png" />
+    <None Include="Img\GI\bennett.png" />
+    <None Include="Img\GI\childe.png" />
+    <None Include="Img\GI\chongyun.png" />
+    <None Include="Img\GI\diluc.png" />
+    <None Include="Img\GI\diona.png" />
+    <None Include="Img\GI\eula.png" />
+    <None Include="Img\GI\fischl.png" />
+    <None Include="Img\GI\ganyu.png" />
+    <None Include="Img\GI\gorou.png" />
+    <None Include="Img\GI\heizou.png" />
+    <None Include="Img\GI\hutao.png" />
+    <None Include="Img\GI\itto.png" />
+    <None Include="Img\GI\jean.png" />
+    <None Include="Img\GI\kazuha.png" />
+    <None Include="Img\GI\keqing.png" />
+    <None Include="Img\GI\klee.png" />
+    <None Include="Img\GI\kokomi.png" />
+    <None Include="Img\GI\kuki shinobu.png" />
+    <None Include="Img\GI\lisa.png" />
+    <None Include="Img\GI\lumine.png" />
+    <None Include="Img\GI\mona.png" />
+    <None Include="Img\GI\kaeya.png" />
+    <None Include="Img\GI\zhongli.png" />
+    <None Include="Img\GI\yunjin.png" />
+    <None Include="Img\GI\yoimiya.png" />
+    <None Include="Img\GI\yelan.png" />
+    <None Include="Img\GI\yanfei.png" />
+    <None Include="Img\GI\yae miko.png" />
+    <None Include="Img\GI\xinyan.png" />
+    <None Include="Img\GI\xingqiu.png" />
+    <None Include="Img\GI\xiao.png" />
+    <None Include="Img\GI\xiangling.png" />
+    <None Include="Img\GI\venti.png" />
+    <None Include="Img\GI\thoma.png" />
+    <None Include="Img\GI\sucrose.png" />
+    <None Include="Img\GI\shenhe.png" />
+    <None Include="Img\GI\sayu.png" />
+    <None Include="Img\GI\rosaria.png" />
+    <None Include="Img\GI\razor.png" />
+    <None Include="Img\GI\raiden shogun.png" />
+    <None Include="Img\GI\qiqi.png" />
+    <None Include="Img\GI\noelle.png" />
+    <None Include="Img\GI\ningguang.png" />
+    <None Include="Img\GI\kujou sara.png" />
+    <None Include="Img\Icon\bill.png" />
+    <None Include="Img\Icon\cookies.png" />
+    <None Include="Img\GI\paimon.png" />
+    <Content Include="Img\Icon\error.png" />
+    <None Include="Img\Icon\food.png" />
+    <Content Include="Img\Icon\icons8_cancel_45px.png" />
+    <None Include="Img\Icon\icons8_Close_30px.png" />
+    <None Include="Img\Icon\icons8_Logout_30px.png" />
+    <None Include="Img\Icon\icons8_picture_30px.png" />
+    <None Include="Img\Icon\icons8_reserve_30px_1.png" />
+    <None Include="Img\Icon\icons8_search_20px.png" />
+    <None Include="Img\Icon\icons8_user_settings_30px.png" />
+    <None Include="Img\Icon\icons8_plus_math_30px.png" />
+    <Content Include="Img\Icon\info.png" />
+    <None Include="Img\Icon\package2.png" />
+    <None Include="Img\Icon\payment.png" />
+    <None Include="Img\Icon\pencil.png" />
+    <None Include="Img\Icon\price-tag.png" />
+    <None Include="Img\Icon\profits.png" />
+    <None Include="Img\Icon\sql-file2.png" />
+    <None Include="Img\Icon\man 1.png" />
+    <None Include="Img\Icon\java.png" />
+    <None Include="Img\Icon\money-bag.png" />
+    <None Include="Img\Icon\shield.png" />
+    <None Include="Img\Icon\Set_Product.png" />
+    <None Include="Img\Icon\quantity.png" />
+    <None Include="Img\Icon\product.png" />
+    <None Include="Img\Icon\product detail.png" />
+    <Content Include="Img\Icon\success.png" />
+    <None Include="Img\Icon\user info.png" />
+    <Content Include="Img\Icon\warning.png" />
+    <None Include="Img\Staff\male staff 10.jpg" />
+    <None Include="Img\Staff\male staff 9.jpg" />
+    <None Include="Img\Staff\male staff 8.jpg" />
+    <None Include="Img\Staff\male staff 7.jpg" />
+    <None Include="Img\Staff\male staff 6.jpg" />
+    <None Include="Img\Staff\male staff 5.jpg" />
+    <None Include="Img\Staff\male staff 4.jpg" />
+    <None Include="Img\Staff\male staff 3.jpg" />
+    <None Include="Img\Staff\male staff 2.jpg" />
+    <None Include="Img\Staff\male staff 1.jpg" />
+    <None Include="Img\Staff\male staff.jpg" />
+    <None Include="Img\Staff\female staff 10.jpg" />
+    <None Include="Img\Staff\female staff 9.jpg" />
+    <None Include="Img\Staff\female staff 8.jpg" />
+    <None Include="Img\Staff\female staff 7.jpg" />
+    <None Include="Img\Staff\female staff 6.jpg" />
+    <None Include="Img\Staff\female staff 5.jpg" />
+    <None Include="Img\Staff\female staff 4.jpg" />
+    <None Include="Img\Staff\female staff 3.jpg" />
+    <None Include="Img\Staff\female staff 2.jpg" />
+    <None Include="Img\Staff\female staff 1.jpg" />
+    <None Include="Img\Icon\shopping1.png" />
+    <None Include="Img\Icon\add-user.png" />
+    <None Include="Img\Icon\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\blue eye icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\blue eye slash icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\coffee app icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\coffee shop icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\Coffee-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\Email icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\exit blue icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\female admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\female employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\lock-xxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\male admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\male employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\password icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Img\Icon\user icon.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+</Project>
